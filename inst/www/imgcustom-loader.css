@@ -3,14 +3,15 @@
 }
 
 .load-container {
-  z-index: 1;
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  /* to avoid showing a vertical scrollbar
-  http://stackoverflow.com/questions/38251204/horizontal-animation-causes-vertical-scrollbar-in-css */
+  top: 100px;
+  left: 0;
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
 }
 .loader-img{
   display: block;

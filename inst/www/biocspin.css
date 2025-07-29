@@ -15,7 +15,7 @@
   /* Increased size for better proportion */
   width: 90px;
   height: 200px;
-  z-index: 10;
+  z-index: 2;
   /* Add the new spinning animation */
   animation: spin-y 5s linear infinite;
   /* Helps ensure the 3D transform behaves correctly */
