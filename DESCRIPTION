@@ -1,0 +1,18 @@
+Package: shinybiocloader
+Title: Use a shiny Bioconductor css loader
+Version: 0.99.0
+Authors@R: 
+    person("Marcel", "Ramos", , "marcel.ramos@sph.cuny.edu", c("aut", "cre"))
+Description: Add a Bioconductor themed CSS loader to your shiny app. It
+    is based on the shinycustomloader R package. Use a spinning Bioconductor
+    note loader to enhance your shiny app loading screen.
+Depends: htmltools
+Imports:
+    glue,
+    shiny
+License: Artistic-2.0
+BugReports: https://github.com/LiNk-NY/shinybiocloader/issues
+URL: https://github.com/LiNk-NY/shinybiocloader
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

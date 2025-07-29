@@ -1,0 +1,260 @@
+/* New main container for the whole logo */
+.bioconductor-logo {
+  position: relative;
+  display: flex;
+  /* Align the top of the note and the top of the helix container */
+  align-items: flex-start;
+  /* Center the logo horizontally */
+  justify-content: center;
+  /* Add perspective to create a 3D space for child elements to transform in */
+  perspective: 800px;
+}
+
+/* Container for the SVG note shape */
+.note-shape {
+  /* Increased size for better proportion */
+  width: 90px;
+  height: 200px;
+  z-index: 10;
+  /* Add the new spinning animation */
+  animation: spin-y 5s linear infinite;
+  /* Helps ensure the 3D transform behaves correctly */
+  transform-style: preserve-3d;
+  /* Set the axis of rotation to be the center of the stem */
+  transform-origin: 94% center;
+}
+.note-shape svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.note-shape svg path {
+  fill: #008C9E;
+}
+
+/* Container for the DNA helix animation */
+.dna {
+  position: relative;
+  /* Adjust horizontal position to align with the note stem */
+  left: 15px;
+  /* Nudge the animation down to align with the top of the note stem */
+  top: 15px;
+  margin: 0;
+}
+.dna::before, .dna::after {
+  content: none;
+}
+
+.nucleobase {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.nucleobase:not(:last-child) {
+  margin-right: 16px;
+}
+.nucleobase:before, .nucleobase:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+/* Loop to create animation delay for each nucleobase */
+.nucleobase:nth-child(1) {
+  animation-delay: -1.869s;
+}
+.nucleobase:nth-child(1):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -1.869s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(1):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -1.869s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(2) {
+  animation-delay: -3.738s;
+}
+.nucleobase:nth-child(2):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -3.738s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(2):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -3.738s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(3) {
+  animation-delay: -5.607s;
+}
+.nucleobase:nth-child(3):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -5.607s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(3):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -5.607s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(4) {
+  animation-delay: -7.476s;
+}
+.nucleobase:nth-child(4):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -7.476s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(4):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -7.476s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(5) {
+  animation-delay: -9.345s;
+}
+.nucleobase:nth-child(5):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -9.345s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(5):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -9.345s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(6) {
+  animation-delay: -11.214s;
+}
+.nucleobase:nth-child(6):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -11.214s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(6):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -11.214s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(7) {
+  animation-delay: -13.083s;
+}
+.nucleobase:nth-child(7):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -13.083s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(7):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -13.083s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(8) {
+  animation-delay: -14.952s;
+}
+.nucleobase:nth-child(8):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -14.952s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(8):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -14.952s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(9) {
+  animation-delay: -16.821s;
+}
+.nucleobase:nth-child(9):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -16.821s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(9):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -16.821s;
+  background-color: #008C9E;
+}
+
+.nucleobase:nth-child(10) {
+  animation-delay: -18.69s;
+}
+.nucleobase:nth-child(10):before {
+  animation: animBefore 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -18.69s;
+  background-color: #94C11F;
+}
+.nucleobase:nth-child(10):after {
+  animation: animAfter 2.1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: -18.69s;
+  background-color: #008C9E;
+}
+
+/* Keyframes for the helix animation (unchanged) */
+@keyframes animBefore {
+  0% {
+    top: -25px;
+    z-index: 1;
+  }
+  25% {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  50% {
+    top: 25px;
+    z-index: -1;
+  }
+  75% {
+    transform: scale(0.8);
+    z-index: -1;
+  }
+  100% {
+    top: -25px;
+    z-index: -1;
+  }
+}
+@keyframes animAfter {
+  0% {
+    top: 25px;
+    z-index: -1;
+  }
+  25% {
+    transform: scale(0.8);
+    z-index: -1;
+  }
+  50% {
+    top: -25px;
+    z-index: 1;
+  }
+  75% {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  100% {
+    top: 25px;
+    z-index: 1;
+  }
+}
+/* New keyframe for the note spinning on its Y-axis */
+@keyframes spin-y {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
