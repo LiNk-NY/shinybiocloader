@@ -1,5 +1,5 @@
 Package: shinybiocloader
-Title: Use a shiny Bioconductor css loader
+Title: Use a shiny Bioconductor CSS Loader
 Version: 0.99.0
 Authors@R: 
     person("Marcel", "Ramos", , "marcel.ramos@sph.cuny.edu", c("aut", "cre"))
