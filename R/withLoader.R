@@ -32,7 +32,8 @@ withLoader <- function(
         proxy_element <- div(
             style = glue::glue(
                 "height:{proxy.height}"
-            ), class = "shiny-loader-placeholder"
+            ),
+            class = "shiny-loader-placeholder"
         )
     }
     htmlfile <-
