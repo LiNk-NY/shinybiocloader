@@ -12,7 +12,9 @@ Depends:
 Imports:
     shiny
 Suggests:
-    shinydashboard
+    shinydashboard,
+    tinytest,
+    quarto
 biocViews: Software, Infrastructure, GUI
 License: Artistic-2.0
 BugReports: https://github.com/Bioconductor/shinybiocloader/issues
