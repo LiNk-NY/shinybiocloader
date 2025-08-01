@@ -17,6 +17,9 @@ for which to wrap with the loader.}
 proxy element. Default is "400px". If the \code{ui_element} already has a
 height specified, this will be set to "100\%".}
 }
+\value{
+A Shiny UI element wrapped with the Bioconductor loader
+}
 \description{
 Add a loader to a Shiny UI element
 }

@@ -17,6 +17,8 @@
 #'
 #' @import htmltools
 #'
+#' @returns A Shiny UI element wrapped with the Bioconductor loader
+#'
 #' @examplesIf interactive()
 #' library(shiny)
 #' library(shinydashboard)
