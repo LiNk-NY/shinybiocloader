@@ -72,9 +72,7 @@ withLoader <- function(
     proxy_element <- tagList()
     if (!is.null(proxy.height)) {
         proxy_element <- div(
-            style = glue::glue(
-                "height:{proxy.height}"
-            ),
+            style = paste0("height:", proxy.height),
             class = "shiny-loader-placeholder"
         )
     }

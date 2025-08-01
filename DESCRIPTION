@@ -9,7 +9,6 @@ Description: Add a Bioconductor themed CSS loader to your shiny app. It
 Depends:
     htmltools
 Imports:
-    glue,
     shiny
 License: Artistic-2.0
 BugReports: https://github.com/Bioconductor/shinybiocloader/issues
