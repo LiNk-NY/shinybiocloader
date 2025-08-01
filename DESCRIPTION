@@ -10,6 +10,8 @@ Depends:
     htmltools
 Imports:
     shiny
+Suggests:
+    shinydashboard
 License: Artistic-2.0
 BugReports: https://github.com/Bioconductor/shinybiocloader/issues
 URL: https://github.com/Bioconductor/shinybiocloader
