@@ -21,9 +21,53 @@ height specified, this will be set to "100\%".}
 Add a loader to a Shiny UI element
 }
 \examples{
-\dontrun{
-withLoader(plotOutput("myplot"))
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+library(shiny)
+library(shinydashboard)
+library(shinybiocloader)
+
+waitHist <- function() {
+  waiting <- faithful[["waiting"]]
+  Sys.sleep(3)  # Simulate loading
+  hist(
+    waiting, col = 'darkgray', border = 'white',
+    main = 'Old Faithful Geyser Waiting Times Histogram',
+    xlab = 'Waiting Time (min)'
+  )
 }
+
+ui <- dashboardPage(
+  dashboardHeader(title = "Bioconductor Loader"),
+  dashboardSidebar(disable = TRUE),
+  dashboardBody(
+    h2("Bioconductor Spinning Loader"),
+    HTML(
+      paste0(
+        "<pre><code class='language-r'>",
+        "withLoader(plotOutput('distPlot'), loader='biocspin')",
+        "</code></pre>"
+      )
+    ),
+    fluidRow(
+      box(
+        title = "With Loader", status = "primary", solidHeader = TRUE,
+        withLoader(plotOutput("distPlot"), loader = "biocspin")
+      ),
+      box(
+        title = "Without Loader", status = "warning", solidHeader = TRUE,
+        plotOutput("distPlot2")
+      )
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$distPlot <- renderPlot(waitHist())
+  output$distPlot2 <- renderPlot(waitHist())
+}
+
+shinyApp(ui = ui, server = server)
+\dontshow{\}) # examplesIf}
 }
 \references{
 \code{shinycustomloader} https://github.com/emitanaka/shinycustomloader
