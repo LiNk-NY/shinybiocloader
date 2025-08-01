@@ -1,0 +1,78 @@
+---
+title: "shinybiocloader: CSS loader for shiny apps"
+author:
+- name: Marcel Ramos
+  affiliation: >
+    CUNY Graduate School of Public Health and Health Policy, New York, NY USA
+date: last-modified
+format: html
+package: shinybiocloader
+vignette: >
+  %\VignetteIndexEntry{shinybiocloader Overview}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+---
+
+# shinybiocloader
+
+This package is intended for shiny app developers. It provides a simple way to
+add a loading animation to a shiny application when processing data or
+rendering outputs. 
+
+# Installation
+
+```{r}
+#| label: install
+#| eval: false
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("shinybiocloader")
+```
+
+# Usage
+
+You can use the `withLoader` function to wrap any UI element that you want to
+display a loader for. The loader can be specified by its name, such as
+"biocspin" though there is only one loader in the package currently.
+
+```{r}
+#| label: shinybiocloader-example
+#| eval: false
+library(shiny)
+library(shinybiocloader)
+ui <- fluidPage(
+    titlePanel("shinybiocloader demo"),
+    sidebarLayout(
+        sidebarPanel(
+            actionButton("load_data", "Load Data")
+        ),
+        mainPanel(
+            withLoader(
+                plotOutput("plot"), loader = "biocspin"
+            )
+        )
+    )
+)
+server <- function(input, output) {
+    observeEvent(input$load_data, {
+        output$plot <- renderPlot({
+            hist(rnorm(1000), main = "Random Normal Distribution")
+        })
+    })
+}
+shinyApp(ui = ui, server = server)
+```
+
+```{r}
+#| label: static-loader
+#| echo: false
+knitr::include_graphics("../man/figures/shinybiocloader.png")
+```
+
+# Session Information
+
+```{r}
+#| label: session-info
+sessionInfo()
+```
