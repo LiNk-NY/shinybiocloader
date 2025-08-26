@@ -13,7 +13,7 @@ You can install the released version of `shinybiocloader` from
 GitHub with:
 
 ```r
-BiocManager::install("LiNk-NY/shinybiocloader")
+BiocManager::install("Bioconductor/shinybiocloader")
 ```
 
 ## Usage
