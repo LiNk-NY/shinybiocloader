@@ -1,6 +1,6 @@
 Package: shinybiocloader
 Title: Use a Shiny Bioconductor CSS loader
-Version: 1.1.0
+Version: 1.3.0
 Authors@R: 
     person("Marcel", "Ramos", , "marcel.ramos@sph.cuny.edu", c("aut", "cre"),
     comment = c(ORCID = "0000-0002-3242-0582"))
